@@ -1,0 +1,14 @@
+services:
+  kafka:
+    image: apache/kafka:4.2.2
+    container_name: kafka
+
+    ports:
+      - 9092:9092
+    
+    volumes:
+      - kafka-data:/tmp/kraft-combined-logs
+
+
+volumes:
+  kafka-data:
