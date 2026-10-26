@@ -2,6 +2,7 @@ import os
 import json
 import requests
 from dotenv import load_dotenv
+from src.ingestion.kafka_producer import enviar_kafka
 
 load_dotenv()
 
@@ -53,3 +54,4 @@ if __name__ == "__main__":
 
     print(json.dumps(dados, indent=4, ensure_ascii=False))
     save_json(dados)
+    enviar_kafka(dados)
