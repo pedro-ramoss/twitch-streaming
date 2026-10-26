@@ -1,0 +1,542 @@
+{
+  "data": [
+    {
+      "id": "318143733475",
+      "user_id": "92038375",
+      "user_login": "caedrel",
+      "user_name": "Caedrel",
+      "game_id": "21779",
+      "game_name": "League of Legends",
+      "type": "live",
+      "title": "🔴WORLDS 2026 SWISS STAGE DAY 4 WAITING ROOM🔴",
+      "viewer_count": 46687,
+      "started_at": "2026-10-26T13:56:28Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_caedrel-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "LPL",
+        "LCK",
+        "LEC",
+        "Worlds",
+        "Esports",
+        "DropsEnabled"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317181624020",
+      "user_id": "233741947",
+      "user_login": "strogo",
+      "user_name": "StRoGo",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "🔴 Spirit 1:1 FURIA | PGL Bucharest 2026 | @stanislaw9",
+      "viewer_count": 40674,
+      "started_at": "2026-10-26T07:52:59Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_strogo-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "Русский",
+        "Major",
+        "ESL",
+        "IEM",
+        "Major2026",
+        "Лудоман"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319092750693",
+      "user_id": "21681549",
+      "user_login": "pgl",
+      "user_name": "PGL",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[A] Team Spirit vs. FURIA - PGL Masters Bucharest 2026 - Group Stage: Round 3",
+      "viewer_count": 28366,
+      "started_at": "2026-10-26T07:23:58Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_pgl-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Esports",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319096273765",
+      "user_id": "77827128",
+      "user_login": "tumblurr",
+      "user_name": "Tumblurr",
+      "game_id": "1863222988",
+      "game_name": "Kings League",
+      "type": "live",
+      "title": "🏆⚽KINGS LEAGUE CUP | 🔵 STALLIONS vs CAESAR 🔴 ORE 21🏆⚽ TUTTE LE PARTITE QUI ⬅️👑",
+      "viewer_count": 26172,
+      "started_at": "2026-10-26T15:18:26Z",
+      "language": "it",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_tumblurr-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Italiano"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319095475685",
+      "user_id": "45912780",
+      "user_login": "mistafaker",
+      "user_name": "MistaFaker",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "Осторожно, стрим для скуфов !предложка https://t.me/fakerstream",
+      "viewer_count": 24454,
+      "started_at": "2026-10-26T14:01:13Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_mistafaker-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "DropsВключены"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317181879636",
+      "user_id": "42415435",
+      "user_login": "afoninje",
+      "user_name": "afoninje",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "Team Yandex [1:1] Team Liquid | Bo3 | PARI UNIVERSE by FISSURE: Group Stage | /w @icebergdoto !tg !pari !втб",
+      "viewer_count": 17131,
+      "started_at": "2026-10-26T09:04:09Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_afoninje-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319093111397",
+      "user_id": "129339704",
+      "user_login": "fissure_dota_ru",
+      "user_name": "fissure_dota_ru",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "Team Liquid [1:1] Team Yandex | Bo3 | PARI UNIVERSE by FISSURE: Group Stage | by @shachlos & @lexggez",
+      "viewer_count": 16465,
+      "started_at": "2026-10-26T08:36:12Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_fissure_dota_ru-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318116249058",
+      "user_id": "38759871",
+      "user_login": "bysl4m",
+      "user_name": "bySL4M",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[RU] Spirit [1:1] FURIA | КРИВОЙ ЭФИР | PGL Masters Bucharest 2026 Group Stage | Day 3 w/ @WorldEdit @bysl4m",
+      "viewer_count": 15426,
+      "started_at": "2026-10-26T10:33:32Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_bysl4m-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Киберспорт",
+        "Русский",
+        "КривойЭфир",
+        "SL4M"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "320831406302",
+      "user_id": "85397463",
+      "user_login": "noway4u_sir",
+      "user_name": "NoWay4u_Sir",
+      "game_id": "21779",
+      "game_name": "League of Legends",
+      "type": "live",
+      "title": "NA WORLD DOMINATION TAG 7 - Worldplayercounter : 20 !bingo",
+      "viewer_count": 15023,
+      "started_at": "2026-10-26T10:47:58Z",
+      "language": "de",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_noway4u_sir-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Deutsch",
+        "DropsAktiviert"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319151219046",
+      "user_id": "108268890",
+      "user_login": "gorgc",
+      "user_name": "Gorgc",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "(EN) Liquid vs Yandex - PARI UNIVERSE - Official English Co-stream !drops",
+      "viewer_count": 14973,
+      "started_at": "2026-10-26T09:11:20Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_gorgc-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319339316085",
+      "user_id": "561111389",
+      "user_login": "martinciriook",
+      "user_name": "MartinCirioOk",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "SUPER FARANEWS!",
+      "viewer_count": 14229,
+      "started_at": "2026-10-26T13:54:31Z",
+      "language": "es",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_martinciriook-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Español",
+        "irl",
+        "justchatting",
+        "hablando",
+        "DropsActivados"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316639692146",
+      "user_id": "49207184",
+      "user_login": "fps_shaka",
+      "user_name": "fps_shaka",
+      "game_id": "21779",
+      "game_name": "League of Legends",
+      "type": "live",
+      "title": "ltk あー",
+      "viewer_count": 14036,
+      "started_at": "2026-10-26T10:32:11Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_fps_shaka-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318142644835",
+      "user_id": "132501030",
+      "user_login": "clemovitch",
+      "user_name": "Clemovitch",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "TRAPPES : L'HORREUR. MANIFESTATIONS : ET MAINTENANT ? | Le Café Rhétorique",
+      "viewer_count": 12655,
+      "started_at": "2026-10-26T11:25:54Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_clemovitch-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Français",
+        "DropsActivés"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317135388246",
+      "user_id": "254030065",
+      "user_login": "skywhywalker",
+      "user_name": "skywhywalker",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "🏆 Spirit [1:1] FURIA | PGL Masters Bucharest 2026 | !ставка !fonbet",
+      "viewer_count": 12523,
+      "started_at": "2026-10-26T07:41:16Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_skywhywalker-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319137681894",
+      "user_id": "1187370053",
+      "user_login": "lacyoffline_",
+      "user_name": "LacyOffline_",
+      "game_id": "499973",
+      "game_name": "Always On",
+      "type": "live",
+      "title": "🔴24/7 @Lacy Content 🔴 Thugs hangout room!",
+      "viewer_count": 11800,
+      "started_at": "2026-10-25T07:28:28Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_lacyoffline_-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "Lacy",
+        "faze",
+        "stableronaldo",
+        "clix",
+        "fortnite",
+        "coreboys",
+        "jynxzi",
+        "kaicenat"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318131631204",
+      "user_id": "854933327",
+      "user_login": "etostark__",
+      "user_name": "Etostark__",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "KARMINE CORP WORLDS WAITING ROOM EYWAAAAA KNIGHTTTTT ON ARRIVEEEEE",
+      "viewer_count": 11432,
+      "started_at": "2026-10-26T14:30:35Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_etostark__-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Français",
+        "DropsActivés"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319150685670",
+      "user_id": "107953058",
+      "user_login": "pgl_cs2",
+      "user_name": "PGL_CS2",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[B] Team Liquid vs. Legacy - PGL Masters Bucharest 2026 - Group Stage: Round 3",
+      "viewer_count": 10767,
+      "started_at": "2026-10-26T07:33:25Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_pgl_cs2-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Esports",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318955662823",
+      "user_id": "467031116",
+      "user_login": "enzzai",
+      "user_name": "enzzai",
+      "game_id": "509672",
+      "game_name": "IRL",
+      "type": "live",
+      "title": "🎳БОУЛИНГ W/ @ANARABDULLAEV @MISOLO3 @KERIMCH1K @KASANOFFF @OGOR2METRA @EX1TY_1 @M1XERBOY",
+      "viewer_count": 10604,
+      "started_at": "2026-10-26T12:07:23Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_enzzai-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "321003624544",
+      "user_id": "26610234",
+      "user_login": "cohhcarnage",
+      "user_name": "CohhCarnage",
+      "game_id": "737987407",
+      "game_name": "Enshrouded",
+      "type": "live",
+      "title": "The Enshrouded 1.0 Run \\o/ HUZZAH! - The !Emberville EA TOMORROW AAAHHH!",
+      "viewer_count": 10228,
+      "started_at": "2026-10-26T11:40:24Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cohhcarnage-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "SFW",
+        "Parent",
+        "ADHD",
+        "moderated",
+        "NoPolitics",
+        "NoReligion",
+        "Interactive",
+        "Overencumbered",
+        "LootGoblin",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "321003043936",
+      "user_id": "172312401",
+      "user_login": "nooreax",
+      "user_name": "nooreax",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "🚨 CRAFT ATTACK 14 🚨 MAXIMALER CONTENT 🚨 2 MONATE 24/7 LIVE 🚨 TAG 17 🚨 NOTY GmbH WG mit @DIMEAX & @NORMAN 🚨 !pmm | Werbung",
+      "viewer_count": 9796,
+      "started_at": "2026-10-26T08:41:43Z",
+      "language": "de",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_nooreax-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Deutsch",
+        "Arbeitslos",
+        "notyexpress",
+        "DropsAktiviert"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317183496276",
+      "user_id": "93869876",
+      "user_login": "thebausffs",
+      "user_name": "Thebausffs",
+      "game_id": "21779",
+      "game_name": "League of Legends",
+      "type": "live",
+      "title": "maroon 5 is the best band in the world",
+      "viewer_count": 8669,
+      "started_at": "2026-10-26T14:27:22Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_thebausffs-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "DropsEnabled"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316640077298",
+      "user_id": "102631269",
+      "user_login": "yaritaiji",
+      "user_name": "たいじ_たいちゃんねる",
+      "game_id": "1510789205",
+      "game_name": "Planet Zoo 2",
+      "type": "live",
+      "title": "たいZoo Park2nd 本格始動",
+      "viewer_count": 8507,
+      "started_at": "2026-10-26T12:00:00Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_yaritaiji-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "たいじ",
+        "日本語",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317182973524",
+      "user_id": "39154778",
+      "user_login": "recrent",
+      "user_name": "Recrent",
+      "game_id": "493057",
+      "game_name": "PUBG: BATTLEGROUNDS",
+      "type": "live",
+      "title": "[1440p] PUBG // !pari !ggsel !tg !мерч",
+      "viewer_count": 8231,
+      "started_at": "2026-10-26T12:59:35Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_recrent-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318458198616",
+      "user_id": "45098797",
+      "user_login": "cdawg",
+      "user_name": "CDawg",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "WATCHING RERUN OF DAY 1 | HOKKAIDO RV - DAY 2 w/ @Peter @abroadchris @Ludwig I !gamersupps !merch !reviews !submissions",
+      "viewer_count": 7746,
+      "started_at": "2026-10-25T23:52:48Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cdawg-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "DropsEnabled"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "322016173402",
+      "user_id": "90866528",
+      "user_login": "mrrknight",
+      "user_name": "MRRKNIGHT",
+      "game_id": "27284",
+      "game_name": "Retro",
+      "type": "live",
+      "title": "Front Page DAY | Classic Castlevania + More |",
+      "viewer_count": 7572,
+      "started_at": "2026-10-26T13:03:37Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_mrrknight-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "NoBackseating",
+        "NoHints",
+        "Retro",
+        "NoSpoilers",
+        "NES",
+        "ClosedCaptions",
+        "RetroAchievements",
+        "ChallengeRun",
+        "MiSTerFPGA"
+      ],
+      "is_mature": false
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam8wTmpZNE55NDFPREEyTmpRMU5UazROeXdpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqbzNOVGN5TGpNeU16WXdPVEU1T0RVNE1pd2laQ0k2Wm1Gc2MyVXNJblFpT25SeWRXVjkifX0"
+  }
+}
