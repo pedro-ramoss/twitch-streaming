@@ -35,7 +35,17 @@ def get_streams(token):
         "Authorization": f"Bearer {token}"
     }
 
-    resposta = requests.get(url, headers=headers, timeout=15)
+    params = {
+        "first": 25
+    }
+
+    resposta = requests.get(
+        url,
+        headers=headers,
+        params=params,
+        timeout=15
+    )
+
     resposta.raise_for_status()
 
     return resposta.json()
