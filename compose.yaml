@@ -2,13 +2,29 @@ services:
   kafka:
     image: apache/kafka:4.2.2
     container_name: kafka
-
     ports:
-      - 9092:9092
-    
+      - "9092:9092"
     volumes:
       - kafka-data:/tmp/kraft-combined-logs
 
+  postgres:
+    image: postgres:17
+    container_name: twitch-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: twitch
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: twitch_data
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U twitch -d twitch_data"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   kafka-data:
+  postgres_data:
