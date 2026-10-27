@@ -1,13 +1,10 @@
 import json
-import sys
 from datetime import datetime, timezone
-from pathlib import Path
 
 import pytest
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
-# Permite executar o teste na raiz do repositorio.
 from src.processing.spark_reader import transformar_lote
 
 
@@ -15,9 +12,9 @@ from src.processing.spark_reader import transformar_lote
 def spark():
     sessao = (
         SparkSession.builder.master("local[2]")
-        .appName("test-twitch-spark")
-        .config("spark.sql.shuffle.partitions", "2")
+        .appName("pytest-twitch-streaming")
         .config("spark.sql.session.timeZone", "UTC")
+        .config("spark.sql.shuffle.partitions", "2")
         .getOrCreate()
     )
     sessao.sparkContext.setLogLevel("ERROR")
@@ -25,57 +22,86 @@ def spark():
     sessao.stop()
 
 
-def criar_kafka_falso(spark, mensagens):
-    agora = datetime(2026, 10, 26, 12, 0, 0, tzinfo=timezone.utc)
+def dataframe_kafka(spark, mensagens):
+    """Simula APENAS o formato de registros lidos do Kafka, sem broker."""
+    instante = datetime(2026, 10, 27, 12, 0, tzinfo=timezone.utc)
     linhas = [
-        ("twitch-streams", 0, n, agora, b"chave", msg.encode("utf-8"))
-        for n, msg in enumerate(mensagens)
+        ("twitch-streams", 0, indice, instante, None, mensagem.encode("utf-8"))
+        for indice, mensagem in enumerate(mensagens)
     ]
-    return spark.createDataFrame(
-        linhas,
-        "topic string, partition int, offset long, timestamp timestamp, key binary, value binary",
-    )
+    schema = "topic string, partition int, offset long, timestamp timestamp, key binary, value binary"
+    return spark.createDataFrame(linhas, schema)
 
 
-def test_envelope_e_validacao(spark):
-    evento = {
-        "event_id": "evento-1",
-        "collected_at": "2026-10-26T12:00:00+00:00",
-        "source": "twitch",
+def mensagem_live(id_live="live-1", user_id="user-1", viewer_count=100, collection_id="coleta-1"):
+    return json.dumps({
+        "event_id": f"evento-{id_live}-{collection_id}",
+        "collected_at": "2026-10-27T12:00:00+00:00",
         "stream": {
-            "id": "live-1",
-            "user_id": "user-1",
-            "user_name": "Streamer",
+            "id": id_live,
+            "user_id": user_id,
+            "user_name": "Streamer Teste",
             "game_name": "Counter-Strike",
-            "viewer_count": 100,
-            "collection_id": "col-1",
+            "viewer_count": viewer_count,
+            "collection_id": collection_id,
             "tags": ["portuguese", "fps"],
         },
-    }
-    ruim = {
-        "stream": {"id": "live-2", "user_id": "user-2", "viewer_count": -10}
-    }
-    repetido = {**evento, "event_id": "evento-2"}
-    kafka = criar_kafka_falso(spark, [
-        json.dumps(evento), json.dumps(ruim), json.dumps(repetido), "{json-invalido"
-    ])
-    linhas = transformar_lote(kafka).select(
-        "stream_id", "viewer_count", "collection_id", "motivo_rejeicao", "tags"
-    ).collect()
-    validas = [r for r in linhas if r.motivo_rejeicao is None]
-    motivos = {r.motivo_rejeicao for r in linhas if r.motivo_rejeicao is not None}
-    assert len(validas) == 1
-    assert validas[0].stream_id == "live-1"
-    assert validas[0].tags == ["portuguese", "fps"]
-    assert "INVALID_VIEWER_COUNT" in motivos
-    assert "DUPLICATE_IN_BATCH" in motivos
-    assert "INVALID_JSON" in motivos
+    })
 
 
-def test_legado_em_lote_e_direto(spark):
-    uma = {"id": "a", "user_id": "ua", "viewer_count": 20, "game_name": "Just Chatting"}
-    duas = {"id": "b", "user_id": "ub", "viewer_count": 15, "game_name": "Minecraft"}
-    kafka = criar_kafka_falso(spark, [json.dumps({"data": [uma, duas]}), json.dumps(uma)])
-    resultado = transformar_lote(kafka)
-    assert resultado.filter(F.col("motivo_rejeicao").isNull()).count() == 3
-    assert set(r.stream_id for r in resultado.select("stream_id").collect()) == {"a", "b"}
+@pytest.mark.parametrize(
+    ("espectadores", "motivo_esperado"),
+    [
+        (0, None),
+        (25, None),
+        (50000, None),
+        (-1, "INVALID_VIEWER_COUNT"),
+        (-50, "INVALID_VIEWER_COUNT"),
+    ],
+)
+def test_validacao_espectadores(spark, espectadores, motivo_esperado):
+    entrada = dataframe_kafka(spark, [mensagem_live(viewer_count=espectadores)])
+    saida = transformar_lote(entrada).select("motivo_rejeicao", "viewer_count").collect()
+    assert len(saida) == 1
+    assert saida[0].motivo_rejeicao == motivo_esperado
+    assert saida[0].viewer_count == espectadores
+
+
+@pytest.mark.parametrize(
+    ("mensagem", "motivo"),
+    [
+        (mensagem_live(id_live="", collection_id="c-missing-id"), "MISSING_STREAM_ID"),
+        (mensagem_live(user_id="", collection_id="c-missing-user"), "MISSING_USER_ID"),
+        ("{json-malformado", "INVALID_JSON"),
+    ],
+)
+def test_dados_invalidos_sao_rejeitados(spark, mensagem, motivo):
+    saida = transformar_lote(dataframe_kafka(spark, [mensagem]))
+    assert saida.select("motivo_rejeicao").first().motivo_rejeicao == motivo
+
+
+def test_duplicatas_no_mesmo_lote_sao_quarentenadas(spark):
+    evento = mensagem_live(id_live="mesma-live", collection_id="mesma-coleta")
+    saida = transformar_lote(dataframe_kafka(spark, [evento, evento]))
+    motivos = [linha.motivo_rejeicao for linha in saida.select("motivo_rejeicao").collect()]
+    assert motivos.count(None) == 1
+    assert motivos.count("DUPLICATE_IN_BATCH") == 1
+
+
+def test_formato_legado_lista_preserva_todas_as_transmissoes(spark):
+    lista = [
+        {"id": "live-A", "user_id": "user-A", "viewer_count": 0},
+        {"id": "live-B", "user_id": "user-B", "viewer_count": 42},
+    ]
+    df = dataframe_kafka(spark, [json.dumps({"data": lista})])
+    saida = transformar_lote(df)
+    assert saida.filter(F.col("motivo_rejeicao").isNull()).count() == 2
+    assert {r.stream_id for r in saida.select("stream_id").collect()} == {"live-A", "live-B"}
+
+
+def test_formato_legado_stream_direta(spark):
+    raw = json.dumps({"id": "live-direta", "user_id": "u-1", "viewer_count": 10})
+    registro = transformar_lote(dataframe_kafka(spark, [raw])).first()
+    assert registro.stream_id == "live-direta"
+    assert registro.motivo_rejeicao is None
+    assert registro.raw_message == raw

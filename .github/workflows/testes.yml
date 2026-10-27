@@ -1,0 +1,42 @@
+name: Testes automatizados
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testes:
+    name: pytest - Python e PySpark
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v7
+
+      - name: Preparar Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Preparar Java para PySpark
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install 'pyspark==4.2.0' 'psycopg[binary]>=3.2,<4' 'kafka-python>=2.2,<3'
+
+      - name: Executar testes
+        env:
+          SPARK_LOCAL_IP: '127.0.0.1'
+          PYSPARK_PYTHON: python
+        run: python -m pytest -q tests/
