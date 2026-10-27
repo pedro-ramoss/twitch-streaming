@@ -2,8 +2,13 @@ import json
 import logging
 import os
 import time
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+
+import psycopg
+from psycopg.types.json import Jsonb
+from dotenv import load_dotenv
 
 from pyspark.sql import DataFrame, SparkSession, Window
 from pyspark.sql import functions as F
@@ -28,8 +33,6 @@ TOPICO = "twitch-streams"
 KAFKA = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
 
 
-# Campos conhecidos de Get Streams. A mensagem Kafka original permanece
-# salva em raw_message, inclusive com eventuais campos novos da API.
 STREAM_SCHEMA = StructType([
     StructField("id", StringType()),
     StructField("user_id", StringType()),
@@ -203,6 +206,120 @@ def transformar_lote(df_kafka: DataFrame) -> DataFrame:
     )
 
 
+def config_postgres() -> dict:
+    """Usa variaveis do ambiente/.env, nunca uma senha no codigo."""
+    senha = os.getenv("POSTGRES_PASSWORD")
+    if not senha:
+        raise RuntimeError("POSTGRES_PASSWORD nao definido. Configure no .env do projeto.")
+    return {
+        "host": os.getenv("POSTGRES_HOST", "localhost"),
+        "port": int(os.getenv("POSTGRES_PORT", "5432")),
+        "dbname": os.getenv("POSTGRES_DB", "twitch_data"),
+        "user": os.getenv("POSTGRES_USER", "twitch"),
+        "password": senha,
+        "connect_timeout": 10,
+    }
+
+
+def recuperar_json_stream(raw_message: str, indice_stream: int | None) -> dict:
+    """Isola a live correta, mesmo quando uma mensagem antiga contem varias."""
+    payload = json.loads(raw_message)
+    if not isinstance(payload, dict):
+        raise ValueError("Mensagem Kafka valida precisa ser um objeto JSON")
+
+    if isinstance(payload.get("stream"), dict):
+        live = dict(payload["stream"])
+    elif isinstance(payload.get("data"), list):
+        indice = indice_stream if indice_stream is not None else 0
+        live = dict(payload["data"][indice])
+    else:
+        live = dict(payload)
+
+    # Registra origem da coleta tambem em raw_data, se existir no envelope.
+    for campo in ("collection_id", "collected_at"):
+        if campo not in live and payload.get(campo) is not None:
+            live[campo] = payload[campo]
+    return live
+
+
+def valores_postgres(row) -> tuple:
+    """Converte uma linha Spark validada no registro do PostgreSQL."""
+    # Identificador natural do evento: collection_id + stream_id,
+    # ou topico/particao/offset para mensagens antigas sem collection_id.
+    identificador = uuid.uuid5(uuid.NAMESPACE_URL, "twitch-streaming:" + row.dedup_key)
+    return (
+        identificador,
+        row.stream_id,
+        row.user_id,
+        row.user_name,
+        row.game_name,
+        row.viewer_count,
+        row.started_at,
+        row.collected_at,
+        Jsonb(recuperar_json_stream(row.raw_message, row.indice_stream)),
+    )
+
+INSERT_SNAPSHOT = """
+INSERT INTO public.stream_snapshots (
+    event_id,
+    stream_id,
+    user_id,
+    user_name,
+    game_name,
+    viewer_count,
+    started_at,
+    collected_at,
+    raw_data
+)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+ON CONFLICT (event_id) DO NOTHING
+"""
+
+def gravar_postgres(df_validos: DataFrame) -> tuple[int, int]:
+    campos = [
+        "dedup_key", "stream_id", "user_id", "user_name", "game_name",
+        "viewer_count", "started_at", "collected_at", "raw_message", "indice_stream",
+    ]
+    candidatos = inseridos = 0
+    pendentes = []
+    with psycopg.connect(**config_postgres()) as conexao:
+        with conexao.cursor() as cursor:
+            # Iterator para nao juntar o DataFrame inteiro na memoria do driver.
+            for row in df_validos.select(*campos).toLocalIterator():
+                pendentes.append(valores_postgres(row))
+                if len(pendentes) >= 200:
+                    cursor.executemany(INSERT_SNAPSHOT, pendentes, returning=False)
+                    candidatos += len(pendentes)
+                    inseridos += cursor.rowcount
+                    pendentes.clear()
+            if pendentes:
+                cursor.executemany(INSERT_SNAPSHOT, pendentes, returning=False)
+                candidatos += len(pendentes)
+                inseridos += cursor.rowcount
+        # A conexao e commitada ao sair do contexto; erro causa rollback.
+    return candidatos, inseridos
+
+
+def backfill_parquet(spark: SparkSession, logger: logging.Logger) -> None:
+    """Carga inicial opcional para lotes Silver ja consumidos pelo Spark."""
+    if not VALIDOS.exists() or not next(VALIDOS.rglob("*.parquet"), None):
+        print("Backfill: nenhum Parquet Silver encontrado. Novos eventos serao processados normalmente.")
+        return
+    inicio = time.perf_counter()
+    historico = spark.read.parquet(str(VALIDOS))
+    candidatos, inseridos = gravar_postgres(historico)
+    duracao = round(time.perf_counter() - inicio, 3)
+    logger.info(json.dumps({
+        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "etapa": "postgres_backfill",
+        "status": "SUCCESS",
+        "candidatos": candidatos,
+        "inseridos": inseridos,
+        "duracao_segundos": duracao,
+    }, ensure_ascii=False))
+    print(f"Backfill PostgreSQL: {inseridos} inseridos de {candidatos} candidatos em {duracao}s.")
+
+
 def processar_lote(df_kafka: DataFrame, batch_id: int, logger: logging.Logger) -> None:
     inicio = time.perf_counter()
     df = transformar_lote(df_kafka).persist(StorageLevel.MEMORY_AND_DISK)
@@ -219,16 +336,26 @@ def processar_lote(df_kafka: DataFrame, batch_id: int, logger: logging.Logger) -
         validos.write.mode("overwrite").parquet(str(caminho_validos))
         rejeitados.write.mode("overwrite").parquet(str(caminho_rejeitados))
 
+        inicio_postgres = time.perf_counter()
+        pg_candidatos, pg_inseridos = gravar_postgres(validos)
+        duracao_postgres = round(time.perf_counter() - inicio_postgres, 3)
+
         registro = {
             "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "batch_id": batch_id,
             "status": "SUCCESS",
             "validos": qt_validos,
             "rejeitados": qt_rejeitados,
+            "postgres_candidatos": pg_candidatos,
+            "postgres_inseridos": pg_inseridos,
+            "duracao_postgres_segundos": duracao_postgres,
             "duracao_segundos": round(time.perf_counter() - inicio, 3),
         }
         logger.info(json.dumps(registro, ensure_ascii=False))
-        print(f"Batch {batch_id}: {qt_validos} validos, {qt_rejeitados} rejeitados.")
+        print(
+            f"Batch {batch_id}: {qt_validos} validos, {qt_rejeitados} rejeitados, "
+            f"{pg_inseridos} novos snapshots no PostgreSQL."
+        )
     except Exception as erro:
         logger.info(json.dumps({
             "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -242,6 +369,9 @@ def processar_lote(df_kafka: DataFrame, batch_id: int, logger: logging.Logger) -
 
 
 def main() -> None:
+    load_dotenv(RAIZ / ".env", override=False)
+    # Falha rapidamente se o ambiente nao estiver configurado.
+    config_postgres()
     logger = configurar_logger()
     spark = (
         SparkSession.builder
@@ -251,6 +381,9 @@ def main() -> None:
         .getOrCreate()
     )
     spark.sparkContext.setLogLevel("WARN")
+
+    if os.getenv("SPARK_BACKFILL_POSTGRES") == "1":
+        backfill_parquet(spark, logger)
 
     df_kafka = (
         spark.readStream.format("kafka")
