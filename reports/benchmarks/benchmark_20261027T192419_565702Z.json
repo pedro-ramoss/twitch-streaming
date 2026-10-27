@@ -1,0 +1,176 @@
+{
+  "timestamp_utc": "2026-10-27T19:24:19+00:00",
+  "config": {
+    "repeticoes": 5,
+    "aquecimento": 1
+  },
+  "logs": {
+    "ingestao": {
+      "execucoes": 4,
+      "sucesso": 4,
+      "falhas": 0,
+      "transmissoes_coletadas": 100,
+      "duracao_total_ms": {
+        "amostras": 4,
+        "min_ms": 860.0,
+        "p50_ms": 951.5,
+        "p95_ms": 1041.0,
+        "max_ms": 1041.0
+      },
+      "api_ms": {
+        "amostras": 3,
+        "min_ms": 716.0,
+        "p50_ms": 792.0,
+        "p95_ms": 866.0,
+        "max_ms": 866.0
+      },
+      "kafka_ms": {
+        "amostras": 3,
+        "min_ms": 173.0,
+        "p50_ms": 177.0,
+        "p95_ms": 212.0,
+        "max_ms": 212.0
+      }
+    },
+    "spark": {
+      "lotes": 2,
+      "sucesso": 2,
+      "falhas": 0,
+      "validos_observados_nos_lotes": 240,
+      "rejeitados_observados_nos_lotes": 1,
+      "duracao_lote_ms": {
+        "amostras": 2,
+        "min_ms": 6632.0,
+        "p50_ms": 7089.0,
+        "p95_ms": 7546.0,
+        "max_ms": 7546.0
+      },
+      "duracao_postgres_ms": {
+        "amostras": 1,
+        "min_ms": 591.0,
+        "p50_ms": 591.0,
+        "p95_ms": 591.0,
+        "max_ms": 591.0
+      },
+      "throughput_registros_por_segundo_por_lote": {
+        "amostras": 2,
+        "mediana": 17.866
+      }
+    }
+  },
+  "erros": {},
+  "postgres": {
+    "total_snapshots": 240,
+    "consultas": {
+      "total_snapshots": {
+        "latencia_cliente": {
+          "amostras": 5,
+          "min_ms": 0.422,
+          "p50_ms": 0.448,
+          "p95_ms": 1.096,
+          "max_ms": 1.096
+        },
+        "plano": {
+          "execucao_ms": 0.06,
+          "planejamento_ms": 0.027,
+          "nos": [
+            "Aggregate",
+            "Seq Scan"
+          ],
+          "shared_hit_blocks": 23,
+          "shared_read_blocks": 0
+        }
+      },
+      "ultimas_transmissoes": {
+        "latencia_cliente": {
+          "amostras": 5,
+          "min_ms": 0.511,
+          "p50_ms": 0.551,
+          "p95_ms": 0.836,
+          "max_ms": 0.836
+        },
+        "plano": {
+          "execucao_ms": 0.098,
+          "planejamento_ms": 0.025,
+          "nos": [
+            "Limit",
+            "Sort",
+            "Seq Scan"
+          ],
+          "shared_hit_blocks": 23,
+          "shared_read_blocks": 0
+        }
+      },
+      "top_jogos": {
+        "latencia_cliente": {
+          "amostras": 5,
+          "min_ms": 0.527,
+          "p50_ms": 0.53,
+          "p95_ms": 0.802,
+          "max_ms": 0.802
+        },
+        "plano": {
+          "execucao_ms": 0.117,
+          "planejamento_ms": 0.036,
+          "nos": [
+            "Limit",
+            "Sort",
+            "Aggregate",
+            "Seq Scan"
+          ],
+          "shared_hit_blocks": 23,
+          "shared_read_blocks": 0
+        }
+      },
+      "coletas_por_hora": {
+        "latencia_cliente": {
+          "amostras": 5,
+          "min_ms": 0.476,
+          "p50_ms": 0.538,
+          "p95_ms": 0.854,
+          "max_ms": 0.854
+        },
+        "plano": {
+          "execucao_ms": 0.11,
+          "planejamento_ms": 0.027,
+          "nos": [
+            "Limit",
+            "Sort",
+            "Aggregate",
+            "Seq Scan"
+          ],
+          "shared_hit_blocks": 23,
+          "shared_read_blocks": 0
+        }
+      }
+    }
+  },
+  "spark_parquet": {
+    "status": "SUCCESS",
+    "snapshots_silver": 240,
+    "leitura_parquet": {
+      "amostras": 5,
+      "min_ms": 133.604,
+      "p50_ms": 148.168,
+      "p95_ms": 176.021,
+      "max_ms": 176.021
+    },
+    "leitura_registros_por_segundo_mediana": 1619.783,
+    "agregacao_jogos_por_particoes_shuffle": {
+      "2": {
+        "amostras": 5,
+        "min_ms": 211.008,
+        "p50_ms": 240.983,
+        "p95_ms": 243.481,
+        "max_ms": 243.481
+      },
+      "4": {
+        "amostras": 5,
+        "min_ms": 142.846,
+        "p50_ms": 165.322,
+        "p95_ms": 182.364,
+        "max_ms": 182.364
+      }
+    }
+  }
+}
