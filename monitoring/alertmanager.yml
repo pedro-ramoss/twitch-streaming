@@ -1,0 +1,11 @@
+# Os alertas sao exibidos no Prometheus e no Alertmanager.
+# Nao enviamos email/Telegram sem configuracao explicita de destino.
+route:
+  receiver: local-ui
+  group_by: [alertname]
+  group_wait: 10s
+  group_interval: 5m
+  repeat_interval: 12h
+
+receivers:
+  - name: local-ui

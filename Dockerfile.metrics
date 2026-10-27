@@ -1,0 +1,11 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+COPY requirements-monitoring.txt /app/requirements-monitoring.txt
+RUN pip install --no-cache-dir -r /app/requirements-monitoring.txt
+
+COPY scripts/metrics_exporter.py /app/scripts/metrics_exporter.py
+
+EXPOSE 8000
+CMD ["python", "-u", "/app/scripts/metrics_exporter.py"]

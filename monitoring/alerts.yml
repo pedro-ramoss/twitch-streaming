@@ -1,0 +1,38 @@
+groups:
+  - name: twitch-streaming-reliability
+    rules:
+      - alert: TwitchMetricsExporterDown
+        expr: up{job="twitch-metrics"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: Exporter de metricas Twitch nao responde
+          description: Prometheus nao consegue coletar as metricas do exporter.
+
+      - alert: TwitchPostgresUnavailable
+        expr: twitch_postgres_up == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: PostgreSQL nao respondeu a verificacao
+          description: A consulta simples ao PostgreSQL falhou nos ultimos 2 minutos.
+
+      - alert: TwitchIngestionFailed
+        expr: increase(twitch_ingestion_runs_total{status="ERROR"}[1h]) > 0
+        for: 0m
+        labels:
+          severity: warning
+        annotations:
+          summary: Falha recente na coleta Twitch
+          description: Foi registrada uma falha de coleta na ultima hora.
+
+      - alert: TwitchSparkBatchFailed
+        expr: increase(twitch_spark_batches_total{status="ERROR"}[1h]) > 0
+        for: 0m
+        labels:
+          severity: warning
+        annotations:
+          summary: Falha recente em micro-lote Spark
+          description: Foi registrada uma falha do Spark na ultima hora.
