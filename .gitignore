@@ -1,5 +1,17 @@
 .env
-.venv/
+.env.*
+!.env.example
 venv/
+.venv/
 __pycache__/
 .pytest_cache/
+
+# Dados e saídas locais
+data/raw/
+data/silver/
+data/quarantine/
+data/checkpoints/
+logs/
+reports/benchmarks/
+reports/operations/
+*.log
