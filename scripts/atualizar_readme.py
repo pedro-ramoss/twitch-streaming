@@ -1,8 +1,3 @@
-"""Atualiza apenas a secao de operacao do README usando auditorias reais.
-
-Uso (na raiz do projeto): python -m scripts.atualizar_readme
-Nao altera dados, credenciais nem checkpoints.
-"""
 from __future__ import annotations
 
 import json
