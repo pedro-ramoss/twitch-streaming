@@ -1,0 +1,2 @@
+{"run_id": "977cf8a7a6f2", "timestamp": "2026-10-29T12:22:02+00:00", "status": "ERROR", "coletados": 0, "enviados": 0, "spark_validos": 0, "postgres_inseridos": 0, "duracao_segundos": 40.01, "erro": "RuntimeError: Servico indisponivel: 127.0.0.1:9092. Verifique o Docker Desktop."}
+{"run_id": "78e4c8cf4b53", "timestamp": "2026-10-29T12:26:07+00:00", "status": "SUCCESS", "coletados": 25, "enviados": 25, "spark_validos": 25, "postgres_inseridos": 25, "duracao_segundos": 23.602, "erro": null}

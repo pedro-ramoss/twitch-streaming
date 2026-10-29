@@ -1,0 +1,536 @@
+{
+  "data": [
+    {
+      "id": "316709548275",
+      "user_id": "545050196",
+      "user_login": "kato_junichi0817",
+      "user_name": "加藤純一うん〇ちゃん",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "Indie World 2026.10.28をみよう",
+      "viewer_count": 47064,
+      "started_at": "2026-10-29T06:17:39Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_kato_junichi0817-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319186496486",
+      "user_id": "21681549",
+      "user_login": "pgl",
+      "user_name": "PGL",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "Team Vitality vs. Natus Vincere - PGL Masters Bucharest 2026 - Playoffs: Quarter Final Match",
+      "viewer_count": 34239,
+      "started_at": "2026-10-29T07:16:29Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_pgl-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Esports",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317119336149",
+      "user_id": "233741947",
+      "user_login": "strogo",
+      "user_name": "StRoGo",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "🔴 Vitality  1:1 NaVi | PGL Bucharest 2026 | @shadowkekw !бот",
+      "viewer_count": 31939,
+      "started_at": "2026-10-29T07:42:47Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_strogo-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "Русский",
+        "Major",
+        "ESL",
+        "IEM",
+        "Major2026",
+        "Лудоман"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317120253909",
+      "user_id": "194407709",
+      "user_login": "morphe_ya",
+      "user_name": "morphe_ya",
+      "game_id": "509672",
+      "game_name": "IRL",
+      "type": "live",
+      "title": "ЗАБЕГ. ДЕНЬ 2 АКВАДОДИКИ @dangerlyoha @kopsteep @murzofix | !tg !winline !мышки !upgrader !caser",
+      "viewer_count": 24255,
+      "started_at": "2026-10-29T10:29:57Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_morphe_ya-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318138799458",
+      "user_id": "63936838",
+      "user_login": "mastu",
+      "user_name": "Mastu",
+      "game_id": "27471",
+      "game_name": "Minecraft",
+      "type": "live",
+      "title": "MARATHON 24/24H - ON MEURT, ON RECOMMENCE AU DÉBUT - MINECRAFT HARDCORE 🚨",
+      "viewer_count": 22846,
+      "started_at": "2026-10-28T19:00:56Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_mastu-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Français"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316651952114",
+      "user_id": "50988750",
+      "user_login": "stylishnoob4",
+      "user_name": "stylishnoob4",
+      "game_id": "771448419",
+      "game_name": "AION 2",
+      "type": "live",
+      "title": "今日のAFは大事だ。その後サイレントヒルへ行く",
+      "viewer_count": 17832,
+      "started_at": "2026-10-29T07:01:48Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_stylishnoob4-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "感謝します",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317155036246",
+      "user_id": "42415435",
+      "user_login": "afoninje",
+      "user_name": "afoninje",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "Team Spirit [0:0] LEGION | Bo3 | PARI UNIVERSE by FISSURE: Playoffs | /w @icebergdoto !tg !pari !втб",
+      "viewer_count": 14798,
+      "started_at": "2026-10-29T09:05:03Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_afoninje-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318992438247",
+      "user_id": "129339704",
+      "user_login": "fissure_dota_ru",
+      "user_name": "fissure_dota_ru",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "Team Spirit [0:0] LEGION | Bo3 | PARI UNIVERSE by FISSURE: Play-off | by @Eiritel & @BLACKARHANGEL",
+      "viewer_count": 14051,
+      "started_at": "2026-10-29T08:26:53Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_fissure_dota_ru-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316710172019",
+      "user_id": "44525650",
+      "user_login": "k4sen",
+      "user_name": "k4sen",
+      "game_id": "1448964995",
+      "game_name": "ARKNIGHTS: ENDFIELD",
+      "type": "live",
+      "title": "アークナイツ：エンドフィールド The k4sen Supported by GRYPHLINE",
+      "viewer_count": 13133,
+      "started_at": "2026-10-29T09:50:00Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_k4sen-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "聞いてないアドバイス禁止",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318992662119",
+      "user_id": "108268890",
+      "user_login": "gorgc",
+      "user_name": "Gorgc",
+      "game_id": "29595",
+      "game_name": "Dota 2",
+      "type": "live",
+      "title": "(EN) Spirit vs Legion - PARI UNIVERSE - Playoffs - Official English Co-stream - !drops",
+      "viewer_count": 12250,
+      "started_at": "2026-10-29T09:03:14Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_gorgc-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "320863700446",
+      "user_id": "45098797",
+      "user_login": "cdawg",
+      "user_name": "CDawg",
+      "game_id": "495054",
+      "game_name": "1-2-Switch",
+      "type": "live",
+      "title": "HOKKAIDO RV - DAY 4 w/ @peter @abroadchris @ludwig I !gamersupps !merch !reviews !submissions",
+      "viewer_count": 12238,
+      "started_at": "2026-10-28T23:57:11Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cdawg-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316652303730",
+      "user_id": "49207184",
+      "user_login": "fps_shaka",
+      "user_name": "fps_shaka",
+      "game_id": "21779",
+      "game_name": "League of Legends",
+      "type": "live",
+      "title": "ltk soloq",
+      "viewer_count": 12070,
+      "started_at": "2026-10-29T09:03:29Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_fps_shaka-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "Drops有効"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "321053628256",
+      "user_id": "151920918",
+      "user_login": "nasa",
+      "user_name": "NASA",
+      "game_id": "509670",
+      "game_name": "Science & Technology",
+      "type": "live",
+      "title": "U.S. Spacewalk 100",
+      "viewer_count": 12053,
+      "started_at": "2026-10-29T10:25:34Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_nasa-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "NASA",
+        "English",
+        "Space"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318170421859",
+      "user_id": "129289579",
+      "user_login": "krl_stream",
+      "user_name": "KRL_STREAM",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "VITALITY vs NAVI | Quart de finale | PGL Masters Bucharest !CODE",
+      "viewer_count": 11576,
+      "started_at": "2026-10-29T07:19:28Z",
+      "language": "fr",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_krl_stream-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Français",
+        "CS2"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317201803604",
+      "user_id": "657644821",
+      "user_login": "cs2_maincast",
+      "user_name": "cs2_maincast",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[UA] Vitality vs NAVI (1-1) BO3 | PGL Masters Bucharest 2026 | Quarter-final | by @thunder_oleg & @kvan",
+      "viewer_count": 10502,
+      "started_at": "2026-10-29T07:40:21Z",
+      "language": "uk",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cs2_maincast-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Українська",
+        "maincast",
+        "cs2",
+        "кс2",
+        "мейнкаст",
+        "Ukrainian",
+        "кс",
+        "PGL"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "318992092903",
+      "user_id": "38759871",
+      "user_login": "bysl4m",
+      "user_name": "bySL4M",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[RU] Vitality [1:1] NAVI | КРИВОЙ ЭФИР | PGL Masters Bucharest 2026 Quarterfinals | Day 6 | @FANAT_ROCKA @xryst_t",
+      "viewer_count": 10495,
+      "started_at": "2026-10-29T07:30:09Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_bysl4m-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Киберспорт",
+        "Русский",
+        "КривойЭфир",
+        "SL4M",
+        "WorldEdit",
+        "CS2Live"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317119342677",
+      "user_id": "254030065",
+      "user_login": "skywhywalker",
+      "user_name": "skywhywalker",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "🏆 Vitality [1:1] NaVi | PGL Masters Bucharest 2026 | !ставка !fonbet",
+      "viewer_count": 9909,
+      "started_at": "2026-10-29T07:43:52Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_skywhywalker-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "317120835925",
+      "user_id": "92048793",
+      "user_login": "ravshann",
+      "user_name": "RavshanN",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "🔴 ДОМАШНИЙ СТРИМ! РЕЗУЛЬТАТЫ РЕАЛИТИ !тг !бб",
+      "viewer_count": 8270,
+      "started_at": "2026-10-29T12:10:16Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_ravshann-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "DropsВключены"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319725465559",
+      "user_id": "172312401",
+      "user_login": "nooreax",
+      "user_name": "nooreax",
+      "game_id": "27471",
+      "game_name": "Minecraft",
+      "type": "live",
+      "title": "🚨 CRAFT ATTACK 14 🚨 NOOREAX DA 🚨 2 MONATE 24/7 LIVE 🚨 TAG 20 🚨 NOTY GmbH WG mit @DIMEAX & @NORMAN 🚨 !pmm | Werbung",
+      "viewer_count": 8126,
+      "started_at": "2026-10-28T08:22:48Z",
+      "language": "de",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_nooreax-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Deutsch",
+        "Arbeitslos",
+        "notyexpress"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319127581925",
+      "user_id": "884930411",
+      "user_login": "cs2_paragon_ru",
+      "user_name": "cs2_paragon_ru",
+      "game_id": "32399",
+      "game_name": "Counter-Strike",
+      "type": "live",
+      "title": "[RU] Team Vitality [1:1] Natus Vincere | PGL Masters Bucharest 2026: Playoffs | BO3 | @yarushkin1, @Lampaaa & @Mr_Zais",
+      "viewer_count": 6152,
+      "started_at": "2026-10-29T07:13:38Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cs2_paragon_ru-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "Esports",
+        "Киберспорт"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "320870249310",
+      "user_id": "26610234",
+      "user_login": "cohhcarnage",
+      "user_name": "CohhCarnage",
+      "game_id": "306019403",
+      "game_name": "Phantom Blade Zero",
+      "type": "live",
+      "title": "PHANTOM BLADE ZERO! - Enshrouded continues this afternoon! - !Emberville (Early Access on Jan. 7th!)",
+      "viewer_count": 6119,
+      "started_at": "2026-10-29T11:59:55Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_cohhcarnage-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "SFW",
+        "Parent",
+        "ADHD",
+        "moderated",
+        "NoPolitics",
+        "NoReligion",
+        "Interactive",
+        "Overencumbered",
+        "LootGoblin",
+        "English"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "321054002912",
+      "user_id": "598713647",
+      "user_login": "angryginge13",
+      "user_name": "angryginge13",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "🔥TOO EARLY!!🔥MORNING!!🔥 GAMES W/ @jakeydavies 🔥TRICK OR TREAT!🔥SKY DIVE SURVIVOR! 🔥WINTON YT VID IS LIVE!!🔥114!!🔥POSTMAN🔥",
+      "viewer_count": 6024,
+      "started_at": "2026-10-29T11:46:25Z",
+      "language": "en",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_angryginge13-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "English",
+        "DropsEnabled"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319735553495",
+      "user_id": "423486275",
+      "user_login": "yuuechka",
+      "user_name": "yuuechka",
+      "game_id": "509658",
+      "game_name": "Just Chatting",
+      "type": "live",
+      "title": "утро в Cербии @zloyn @morphilina @skillz0r1337 | !tg !бетм !розыгрыш",
+      "viewer_count": 5926,
+      "started_at": "2026-10-29T10:09:43Z",
+      "language": "ru",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_yuuechka-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Русский",
+        "альтуха",
+        "нишевая",
+        "Повтор",
+        "DropsВключены"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "319186630758",
+      "user_id": "60160906",
+      "user_login": "gtimetv",
+      "user_name": "GTimeTV",
+      "game_id": "27471",
+      "game_name": "Minecraft",
+      "type": "live",
+      "title": "Die Content Maschine ist zurück !Gönrgy !Gportal !Nyfter",
+      "viewer_count": 5390,
+      "started_at": "2026-10-29T07:44:38Z",
+      "language": "de",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_gtimetv-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "Deutsch",
+        "survivalgames",
+        "Grinder",
+        "PvE",
+        "Chilled"
+      ],
+      "is_mature": false
+    },
+    {
+      "id": "316710460275",
+      "user_id": "952340772",
+      "user_login": "hiiragitsurugi",
+      "user_name": "柊ツルギ",
+      "game_id": "511224",
+      "game_name": "Apex Legends",
+      "type": "live",
+      "title": "柊ツルギ、プレマス帯で揉まれる w/CPT,胡桃のあ",
+      "viewer_count": 5334,
+      "started_at": "2026-10-29T11:02:01Z",
+      "language": "ja",
+      "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_hiiragitsurugi-{width}x{height}.jpg",
+      "tag_ids": [],
+      "tags": [
+        "日本語",
+        "雑談",
+        "ゲーム"
+      ],
+      "is_mature": false
+    }
+  ],
+  "pagination": {
+    "cursor": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam8wTnpBMk5DNDNNekU0T1RnME5qY3lNalFzSW1RaU9tWmhiSE5sTENKMElqcDBjblZsZlE9PSJ9LCJhIjp7IkN1cnNvciI6ImV5SnpJam8xTXpNMExqYzFPRGd4T1RZMU5EVTVMQ0prSWpwbVlXeHpaU3dpZENJNmRISjFaWDA9In19"
+  }
+}

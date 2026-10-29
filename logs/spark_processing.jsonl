@@ -2,3 +2,4 @@
 {"timestamp": "2026-10-27T13:34:38+00:00", "etapa": "postgres_backfill", "status": "SUCCESS", "candidatos": 215, "inseridos": 215, "duracao_segundos": 3.682}
 {"timestamp": "2026-10-27T13:42:25+00:00", "etapa": "postgres_backfill", "status": "SUCCESS", "candidatos": 215, "inseridos": 0, "duracao_segundos": 4.954}
 {"timestamp": "2026-10-27T13:48:44+00:00", "batch_id": 1, "status": "SUCCESS", "validos": 25, "rejeitados": 0, "postgres_candidatos": 25, "postgres_inseridos": 25, "duracao_postgres_segundos": 0.591, "duracao_segundos": 7.546}
+{"timestamp": "2026-10-29T12:26:30+00:00", "batch_id": 2, "status": "SUCCESS", "validos": 25, "rejeitados": 0, "postgres_candidatos": 25, "postgres_inseridos": 25, "duracao_postgres_segundos": 0.462, "duracao_segundos": 8.122}
